@@ -2,34 +2,53 @@
 //  formulario.swift
 //  Practica4
 //
-//  Created by MTI on 18/09/18.
-//  Copyright © 2018 MTI. All rights reserved.
+//  Created by OscarVago on 18/09/18.
+//  Copyright © 2018 DosDesign. All rights reserved.
 //
 
+
+
 import UIKit
+//singleton
+class Tasks{
+    
+    var field = String()
+    var dater = String()
+    init (field:String, dater:String){
+        self.field = field
+        self.dater = dater
+    }
+}
 
 class formulario: UIViewController {
-
+ 
+    @IBOutlet weak var field: UITextField!
+    @IBOutlet weak var dater: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func adder(_ sender: Any) {
+        
+        let fecha = "\(String(describing: dater.date))"
+        let tasking = field.text
+        
+        let alerta = UIAlertController(title: "Agregar Tarea", message: tasking, preferredStyle: .alert)
+        alerta.addAction(UIAlertAction(title: NSLocalizedString("Agregar", comment: "Default action"), style: .default, handler: { _ in
+            tasks.append(Tasks(field: tasking!, dater: fecha))
+            
+        }))
+        self.present(alerta, animated: true, completion: nil)
+        
+        
     }
-    */
-
 }
+
+
+

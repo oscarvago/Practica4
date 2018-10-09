@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6ZW-d7-6gj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6ZW-d7-6gj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Item 2-->
         <scene sceneID="Rpz-xS-dmJ">
             <objects>
-                <viewController id="esi-HN-5A9" sceneMemberID="viewController">
+                <viewController id="esi-HN-5A9" customClass="formulario" customModule="Practica4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rZ4-fW-els">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,6 +42,9 @@
                                 <rect key="frame" x="164" y="306" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="adder:" destination="esi-HN-5A9" eventType="touchUpInside" id="Aoi-PI-8gi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,6 +55,10 @@
                         <viewLayoutGuide key="safeArea" id="ekP-qG-Vsr"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="yJC-Cj-ttv"/>
+                    <connections>
+                        <outlet property="dater" destination="2dq-cF-E5v" id="C1C-vT-Zqz"/>
+                        <outlet property="field" destination="myw-5d-F7K" id="YUV-Zu-8U9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hg-W2-pi5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,22 +80,22 @@
                                     <constraint firstAttribute="height" constant="523" id="sSZ-hq-gL3"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" textLabel="1Jh-Mr-taO" detailTextLabel="8gY-dD-MDQ" style="IBUITableViewCellStyleSubtitle" id="GwL-V9-dbb">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" textLabel="1Jh-Mr-taO" detailTextLabel="8gY-dD-MDQ" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="GwL-V9-dbb">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GwL-V9-dbb" id="nLz-pV-PQd">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="DueDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Jh-Mr-taO">
-                                                    <rect key="frame" x="15" y="5" width="67" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="67" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8gY-dD-MDQ">
-                                                    <rect key="frame" x="15" y="25.5" width="26" height="14.5"/>
+                                                    <rect key="frame" x="15" y="38.5" width="26" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
