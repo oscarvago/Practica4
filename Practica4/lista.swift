@@ -6,8 +6,7 @@
 //  Copyright © 2018 DosDesign. All rights reserved.
 //
 
-var tasks = [Tasks]()
-var tkask: Tasks?
+
 
 import UIKit
 
@@ -22,7 +21,8 @@ class lista: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        tableView.reloadData()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

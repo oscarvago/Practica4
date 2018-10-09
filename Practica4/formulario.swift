@@ -9,6 +9,10 @@
 
 
 import UIKit
+
+var tasks = [Tasks]()
+var tkask: Tasks?
+
 //singleton
 class Tasks{
     
@@ -27,6 +31,8 @@ class formulario: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +51,7 @@ class formulario: UIViewController {
             
         }))
         self.present(alerta, animated: true, completion: nil)
+        
         
         
     }
