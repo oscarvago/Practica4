@@ -29,12 +29,12 @@ class lista: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return tareas.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celda")
-        cell?.textLabel?.text = tasks[indexPath.row].field
-        cell?.detailTextLabel?.text = tasks[indexPath.row].dater
+        cell?.textLabel?.text = tareas[indexPath.row].field
+        cell?.detailTextLabel?.text = tareas[indexPath.row].dater
         
         return cell!
     }
