@@ -47,10 +47,10 @@ class formulario: UIViewController {
         let alerta = UIAlertController(title: "¿Agregar Tarea?", message: tasking, preferredStyle: .alert)
          alerta.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: { _ in
             tareas.append(tasku)
-            print("testing")
-            print(tareas)
-            //print(tasking!)
-            //print(fecha)
+            let vc = lista(nibName: "lista", bundle: nil)
+            vc.tareas = [Tasks]
+
+            navigationController?.pushViewController(vc, animated: true)
        
         }))
         self.present(alerta, animated: true, completion: nil)
