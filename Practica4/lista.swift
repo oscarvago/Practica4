@@ -21,7 +21,7 @@ class lista: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
+        var tareas:[Tasks] = []
         tableView.reloadData()
     }
 
