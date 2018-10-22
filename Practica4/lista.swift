@@ -12,7 +12,7 @@ import UIKit
 
 class lista: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-
+    var tareas:[Tasks] = []
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -21,7 +21,7 @@ class lista: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         tableView.dataSource = self
         tableView.delegate = self
-        var tareas:[Tasks] = []
+        
         tableView.reloadData()
     }
 
