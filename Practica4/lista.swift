@@ -12,27 +12,31 @@ import UIKit
 
 class lista: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var tareas:[Tasks] = []
     
+   
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        tableView.reloadData()
+       
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tareas.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celda")
+        
         cell?.textLabel?.text = tareas[indexPath.row].field
         cell?.detailTextLabel?.text = tareas[indexPath.row].dater
         

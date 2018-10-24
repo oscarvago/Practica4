@@ -6,13 +6,12 @@
 //  Copyright © 2018 DosDesign. All rights reserved.
 //
 
-
-
 import UIKit
+
 
 var tareas:[Tasks] = []
 
-class Tasks{
+class Tasks: NSObject{
     
     var field = String()
     var dater = String()
@@ -22,36 +21,36 @@ class Tasks{
         self.dater = dater
     }
 }
-class formulario: UIViewController {
+class formulario: UIViewController{
  
+   
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var dater: UIDatePicker!
     
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     
-   
+    
     @IBAction func adderer(_ sender: Any) {
-    
-    
+        
+        
         let fecha = "\(String(describing: dater.date))"
         let tasking = field.text
-        let tasku = Tasks(field: tasking!, dater: fecha)
         
-        let alerta = UIAlertController(title: "¿Agregar Tarea?", message: tasking, preferredStyle: .alert)
-         alerta.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: { _ in
-            tareas.append(tasku)
-            let vc = lista(nibName: "lista", bundle: nil)
-            vc.tareas = [Tasks]
-
-            navigationController?.pushViewController(vc, animated: true)
-       
+        
+        
+        let alerta = UIAlertController(title: "Se agregara tarea", message: tasking, preferredStyle: .alert)
+        alerta.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: { _ in
+            
+            tareas.append(Tasks(field: tasking!, dater: fecha))
+            
         }))
         self.present(alerta, animated: true, completion: nil)
     }
